@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Sanity : MonoBehaviour
 {
-    [SerializeField]
-    private int MaxSanity = 100;
-    [SerializeField]
-    private int SanityRegen = 1;
+    [SerializeField] private int MaxSanity = 100;
+    [SerializeField] private int SanityRegen = 1;
     private float _currentSanity = 0;
 
     private float CurrentSanity {
@@ -46,6 +44,6 @@ public class Sanity : MonoBehaviour
         if (CurrentSanity > 0)
             CurrentSanity -= SanityRegen * Time.deltaTime;
         else
-            GameManager.Instance.SetPlayerIsInsane();
+            GameManager.Instance.GameOver();
     }
 }

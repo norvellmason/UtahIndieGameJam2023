@@ -9,14 +9,10 @@ public class PlayerController : MonoBehaviour
     private InputController _InputController;
     private SpriteRenderer _SpriteRenderer;
     private Animator _Animator;
-    [SerializeField]
-    private float RealMoveSpeed = 100;
-    [SerializeField]
-    private float DreamMoveSpeed = 13;
-    [SerializeField]
-    private float RealJumpHeight = 1500;
-    [SerializeField]
-    private float DreamJumpHeight = 1000;
+    [SerializeField] private float RealMoveSpeed = 100;
+    [SerializeField] private float DreamMoveSpeed = 13;
+    [SerializeField] private float RealJumpHeight = 1500;
+    [SerializeField] private float DreamJumpHeight = 1000;
 
     private float _JumpCooldown = 0f;
     private float _RecentlyFellTimer = 0.1f;

@@ -9,7 +9,7 @@ public class RoadDetection : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameManager.Instance.KillPlayer();
+            GameManager.Instance.GameOver();
         }
     }
 }
