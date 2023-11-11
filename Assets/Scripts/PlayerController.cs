@@ -19,12 +19,12 @@ public class PlayerController : MonoBehaviour
 
     private float GetMoveSpeed()
     {
-        return GameManager.Instance.IsDreamMode ? DreamMoveSpeed : RealMoveSpeed;
+        return GameManager.Instance.IsDreamWorld ? DreamMoveSpeed : RealMoveSpeed;
     }
 
     private float GetJumpHeight()
     {
-        return GameManager.Instance.IsDreamMode ? DreamJumpHeight : RealJumpHeight;
+        return GameManager.Instance.IsDreamWorld ? DreamJumpHeight : RealJumpHeight;
     }
 
     // Start is called before the first frame update
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.LeftShift))
         {
             ToggleDreamMode();
         }
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Instance.ToggleDreamMode(); 
         
-        if (GameManager.Instance.IsDreamMode)
+        if (GameManager.Instance.IsDreamWorld)
         {
             _Rigidbody.gravityScale = 0.75f;
             _Rigidbody.drag = 3;

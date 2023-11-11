@@ -11,7 +11,7 @@ public class BossLogic : MonoBehaviour
     private void Update()
     {
         float speed = Speed;
-        if (GameManager.Instance.IsDreamMode)
+        if (GameManager.Instance.IsDreamWorld)
             speed *= GameManager.DreamModeSpeedFactor;
         else
             speed = Speed;
