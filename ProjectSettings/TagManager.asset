@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Boss
   - Player
-  - 
+  - Obstacles
   - 
   - 
   - 
@@ -38,12 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Boss
-    uniqueID: 2729769229
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Obstacles
     uniqueID: 3594198185
+    locked: 0
+  - name: Road
+    uniqueID: 3262082893
+    locked: 0
+  - name: Boss
+    uniqueID: 2729769229
+    locked: 0
+  - name: Player
+    uniqueID: 3170240379
     locked: 0
