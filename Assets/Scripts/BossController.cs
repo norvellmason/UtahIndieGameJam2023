@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossLogic : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class BossLogic : MonoBehaviour
     private float Speed = 10;
 
    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         float speed = Speed;
         if (GameManager.Instance.IsDreamMode)
