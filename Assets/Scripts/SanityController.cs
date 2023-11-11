@@ -8,7 +8,16 @@ public class Sanity : MonoBehaviour
     private int MaxSanity = 100;
     [SerializeField]
     private int SanityRegen = 1;
-    private float CurrentSanity = 0;
+    private float _currentSanity = 0;
+
+    private float CurrentSanity {
+        get { return _currentSanity;  }
+        set
+        {
+            _currentSanity = value;
+            GameManager.Instance.SetSanity(value);
+        }
+    }
 
 
     private void Start()

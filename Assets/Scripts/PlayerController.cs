@@ -8,9 +8,13 @@ public class PlayerController : MonoBehaviour
     private Collider2D _Collider;
     private InputController _InputController;
     private SpriteRenderer _SpriteRenderer;
+    [SerializeField]
     private float RealMoveSpeed = 100;
+    [SerializeField]
     private float DreamMoveSpeed = 13;
+    [SerializeField]
     private float RealJumpHeight = 1500;
+    [SerializeField]
     private float DreamJumpHeight = 1000;
 
     private float _JumpCooldown = 0f;
