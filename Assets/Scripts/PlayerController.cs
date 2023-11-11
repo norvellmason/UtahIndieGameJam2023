@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Collider2D _Collider;
     private InputController _InputController;
     private SpriteRenderer _SpriteRenderer;
+    private Animator _Animator;
     [SerializeField]
     private float RealMoveSpeed = 100;
     [SerializeField]
@@ -37,7 +38,8 @@ public class PlayerController : MonoBehaviour
         _Rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _Collider = gameObject.GetComponent<Collider2D>();
         _InputController = gameObject.GetComponent<InputController>();
-        _SpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        _SpriteRenderer = gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        _Animator = gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -61,14 +63,20 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        _Animator.SetBool("isRunning", false);
+
         if (_InputController.IsPressingRight && !_InputController.IsPressingLeft)
         {
             _Rigidbody.AddForce(new Vector2(GetMoveSpeed(), 0));
+            _Animator.SetBool("isRunning", true);
+            _SpriteRenderer.flipX = false;
         }
 
         if(_InputController.IsPressingLeft && !_InputController.IsPressingRight)
         {
             _Rigidbody.AddForce(new Vector2(-GetMoveSpeed(), 0));
+            _Animator.SetBool("isRunning", true);
+            _SpriteRenderer.flipX = true;
         }
 
         if (_WasGroundedLastFrame && !IsGrounded())
@@ -118,13 +126,13 @@ public class PlayerController : MonoBehaviour
         {
             _Rigidbody.gravityScale = 0.75f;
             _Rigidbody.drag = 3;
-            _SpriteRenderer.color = Color.black;
+            _Animator.SetBool("isDreamMode", true);
         }
         else
         {
             _Rigidbody.gravityScale = 8;
             _Rigidbody.drag = 10;
-            _SpriteRenderer.color = Color.white;
+            _Animator.SetBool("isDreamMode", false);
         }
     }
 }
