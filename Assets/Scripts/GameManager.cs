@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SanityEventArgs : EventArgs
 {
@@ -78,6 +79,10 @@ public class GameManager : MonoBehaviour
         _GameStateSwitchCallbacks.Add(callback);
     }
 
+    public void KillPlayer()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     public void SetPlayerIsInsane()
     {

@@ -42,7 +42,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4962259341964093238}
   - component: {fileID: 7922498169242577159}
-  - component: {fileID: 4960761518365919986}
   - component: {fileID: 8248675366529514050}
   - component: {fileID: 5706942410814532570}
   m_Layer: 8
@@ -119,33 +118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4960761518365919986
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7553257621544364133}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!60 &8248675366529514050
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -208,7 +180,7 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
