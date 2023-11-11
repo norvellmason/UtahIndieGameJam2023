@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private float RealMoveSpeed = 100;
     private float DreamMoveSpeed = 13;
     private float RealJumpHeight = 1500;
-    private float DreamJumpHeight = 600;
+    private float DreamJumpHeight = 1000;
 
     private float _JumpCooldown = 0f;
 
@@ -70,7 +70,8 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, _Collider.bounds.extents.y + 0.1f);
+        LayerMask mask = LayerMask.GetMask("Obstacles");
+        return Physics2D.Raycast(transform.position, Vector2.down, _Collider.bounds.extents.y + 0.1f, mask);
     }
 
     private void ToggleDreamMode()
