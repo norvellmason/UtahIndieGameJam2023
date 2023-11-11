@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     private enum State
     {
         RealWorld,
-        UpsideDownWorld,
+        DreamWorld,
         GameOver
     }
 
@@ -56,6 +56,15 @@ public class GameManager : MonoBehaviour
         set 
         { 
             _state = value;
+            switch (value)
+            {
+                case State.GameOver:
+                    Time.timeScale = 0f;
+                    break;
+                case State.DreamWorld:
+                    SoundManager.Instance.PlayDreamWorldMusic();
+                    break;
+            }
             if (value != State.GameOver)
                 Time.timeScale = 1f;
         }
@@ -71,9 +80,9 @@ public class GameManager : MonoBehaviour
         get { return state == State.RealWorld; }
     }
 
-    public bool IsDreamMode
+    public bool IsDreamWorld
     {
-        get { return state == State.UpsideDownWorld; }
+        get { return state == State.DreamWorld; }
     }
 
     public void SetSanity(float currentSanity)
@@ -85,7 +94,7 @@ public class GameManager : MonoBehaviour
     public void ToggleDreamMode()
     {
         if (state == State.RealWorld)
-            state = State.UpsideDownWorld;
+            state = State.DreamWorld;
         else
             state = State.RealWorld;
 

@@ -27,7 +27,7 @@ public class Sanity : MonoBehaviour
     {
         if (GameManager.Instance.IsRealWorld)
             IncreaseSanity();
-        else if (GameManager.Instance.IsDreamMode)
+        else if (GameManager.Instance.IsDreamWorld)
             DecreaseSanity();
     }
 

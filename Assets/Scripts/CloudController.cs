@@ -23,7 +23,7 @@ public class CloudController : MonoBehaviour
 
     private void GameStateSwitchCallback()
     {
-        if (GameManager.Instance.IsDreamMode)
+        if (GameManager.Instance.IsDreamWorld)
         {
             _Collider.enabled = true;
             _Renderer.color = Color.green;
