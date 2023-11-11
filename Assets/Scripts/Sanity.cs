@@ -26,8 +26,10 @@ public class Sanity : MonoBehaviour
 
     private void IncreaseSanity()
     {
-        if (CurrentSanity < MaxSanity) 
+        if (CurrentSanity < MaxSanity)
             CurrentSanity += SanityRegen * Time.deltaTime;
+        else if (CurrentSanity > MaxSanity)
+            CurrentSanity = MaxSanity;
     }
 
     private void DecreaseSanity()

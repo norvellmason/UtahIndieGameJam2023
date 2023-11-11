@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 263395266}
   - component: {fileID: 263395265}
   - component: {fileID: 263395268}
+  - component: {fileID: 263395269}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -250,6 +251,18 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &263395269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263395264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34716ebe69a373e40bf9c517795c63b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &284400064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -626,6 +639,7 @@ GameObject:
   - component: {fileID: 1427343269}
   - component: {fileID: 1427343268}
   - component: {fileID: 1427343271}
+  - component: {fileID: 1427343272}
   m_Layer: 7
   m_Name: PlayerStandin
   m_TagString: Untagged
@@ -762,6 +776,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &1427343272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427343267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fba3d8ffa5c7044486903d7a3222e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSanity: 100
+  SanityRegen: 1
 --- !u!1001 &1462706678
 PrefabInstance:
   m_ObjectHideFlags: 0
