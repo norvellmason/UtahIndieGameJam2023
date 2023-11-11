@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private InputController _InputController;
     private SpriteRenderer _SpriteRenderer;
     private Animator _Animator;
+    [SerializeField] private GameObject DustEffectPrefab;
     [SerializeField] private float RealMoveSpeed = 100;
     [SerializeField] private float DreamMoveSpeed = 13;
     [SerializeField] private float RealJumpHeight = 1500;
@@ -91,6 +92,12 @@ public class PlayerController : MonoBehaviour
             _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, 0);
             _Rigidbody.AddForce(new Vector2(0, GetJumpHeight()));
             _JumpCooldown = 0.5f;
+            Instantiate(DustEffectPrefab, gameObject.transform.position - new Vector3(0, _Collider.bounds.extents.y, 0), Quaternion.identity);
+        }
+
+        if (!_WasGroundedLastFrame && IsGrounded())
+        {
+            Instantiate(DustEffectPrefab, gameObject.transform.position - new Vector3(0, _Collider.bounds.extents.y, 0), Quaternion.identity);
         }
 
         _WasGroundedLastFrame = IsGrounded();
