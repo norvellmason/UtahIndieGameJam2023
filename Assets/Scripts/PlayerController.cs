@@ -8,12 +8,18 @@ public class PlayerController : MonoBehaviour
     private Collider2D _Collider;
     private InputController _InputController;
     private SpriteRenderer _SpriteRenderer;
+    [SerializeField]
     private float RealMoveSpeed = 100;
+    [SerializeField]
     private float DreamMoveSpeed = 13;
+    [SerializeField]
     private float RealJumpHeight = 1500;
-    private float DreamJumpHeight = 600;
+    [SerializeField]
+    private float DreamJumpHeight = 1000;
 
     private float _JumpCooldown = 0f;
+    private float _RecentlyFellTimer = 0.1f;
+    private bool _WasGroundedLastFrame = false;
 
     private float GetMoveSpeed()
     {
@@ -46,6 +52,11 @@ public class PlayerController : MonoBehaviour
         {
             _JumpCooldown -= Time.deltaTime;
         }
+
+        if (_RecentlyFellTimer > 0)
+        {
+            _RecentlyFellTimer -= Time.deltaTime;
+        }
     }
 
     private void FixedUpdate()
@@ -60,17 +71,43 @@ public class PlayerController : MonoBehaviour
             _Rigidbody.AddForce(new Vector2(-GetMoveSpeed(), 0));
         }
 
-        if (_InputController.IsPressingJump && IsGrounded() && _JumpCooldown <= 0)
+        if (_WasGroundedLastFrame && !IsGrounded())
+        {
+            _RecentlyFellTimer = 0.04f;
+        }
+
+        if (_InputController.IsPressingJump && CanJump())
         {
             _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, 0);
             _Rigidbody.AddForce(new Vector2(0, GetJumpHeight()));
             _JumpCooldown = 0.5f;
         }
+
+        _WasGroundedLastFrame = IsGrounded();
     }
 
     private bool IsGrounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, _Collider.bounds.extents.y + 0.1f);
+        LayerMask mask = LayerMask.GetMask("Obstacles");
+        bool hitLeft = Physics2D.Raycast(transform.position + new Vector3(_Collider.bounds.extents.x * 0.9f, 0, 0), Vector2.down, _Collider.bounds.extents.y + 0.1f, mask);
+        bool hitMiddle = Physics2D.Raycast(transform.position, Vector2.down, _Collider.bounds.extents.y + 0.1f, mask);
+        bool hitRight = Physics2D.Raycast(transform.position - new Vector3(_Collider.bounds.extents.x * 0.9f, 0, 0), Vector2.down, _Collider.bounds.extents.y + 0.1f, mask);
+        return hitLeft || hitMiddle || hitRight;
+    }
+
+    private bool CanJump()
+    {
+        if (_JumpCooldown > 0)
+        {
+            return false;
+        }
+
+        if (!IsGrounded() && _RecentlyFellTimer <= 0)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     private void ToggleDreamMode()
