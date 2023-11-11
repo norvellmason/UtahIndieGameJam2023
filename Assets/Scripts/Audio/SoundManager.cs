@@ -35,26 +35,12 @@ public class SoundManager : MonoBehaviour
     private void LoadClips()
     {
         if (_dreamWorldClip == null)
-        {
             _dreamWorldClip = Resources.Load<AudioClip>("Audio/Music/Dark_Theme");
-            PreloadMusicClip(_dreamWorldClip);
-        }
+        if (_realWorldClip == null)
+            _realWorldClip = Resources.Load<AudioClip>("Audio/Music/Dark_Theme");
 
         if (_firedClip == null)
             _firedClip = Resources.Load<AudioClip>("Audio/SFX/fired");
-    }
-
-    /// <summary>
-    /// Preload playing music so that the first time the user plays it, it doesn't cause any lag
-    /// </summary>
-    /// <param name="clip"></param>
-    private void PreloadMusicClip(AudioClip clip)
-    {
-        float prevVolume = _musicSource.volume;
-        _musicSource.volume = 0;
-        PlayMusic(clip);
-        _musicSource.Stop();
-        _musicSource.volume = prevVolume;
     }
 
     private void PlaySound(AudioClip clip)
@@ -64,7 +50,20 @@ public class SoundManager : MonoBehaviour
 
     private void PlayMusic(AudioClip clip)
     {
-        _musicSource.PlayOneShot(clip);
+        if (_musicSource.clip != clip)
+        {
+            float currentMusicPosition = _musicSource.time;
+            _musicSource.Stop();
+
+            _musicSource.clip = clip;
+            _musicSource.time = currentMusicPosition;
+            _musicSource.Play();
+        }
+    }
+
+    public void PlayRealWorldMusic()
+    {
+        PlayMusic(_realWorldClip);
     }
 
     public void PlayDreamWorldMusic()
