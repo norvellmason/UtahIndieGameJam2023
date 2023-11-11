@@ -75,9 +75,15 @@ public class PlayerController : MonoBehaviour
             _SpriteRenderer.flipX = true;
         }
 
-        if (_WasGroundedLastFrame && !IsGrounded())
+        _Animator.SetBool("isInAir", false);
+        if (!IsGrounded())
         {
-            _RecentlyFellTimer = 0.04f;
+            _Animator.SetBool("isInAir", true);
+
+            if (_WasGroundedLastFrame)
+            {
+                _RecentlyFellTimer = 0.04f;
+            }
         }
 
         if (_InputController.IsPressingJump && CanJump())
