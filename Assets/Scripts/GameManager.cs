@@ -26,23 +26,44 @@ public class GameManager : MonoBehaviour
     private enum State
     {
         RealWorld,
-        UpsideDownWorld
+        UpsideDownWorld,
+        GameOver
     }
 
-    private State state;
+    private State _state;
 
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
             Destroy(gameObject);
-        else 
-            Instance = this;
+        Instance = this;
+
+        if (SoundManager.Instance == null)
+        {
+            SoundManager.Create();
+        }
     }
 
     private void Start()
     {
         state = State.RealWorld;
+    }
+
+    private State state
+    {
+        get { return _state; }
+        set 
+        { 
+            _state = value;
+            if (value != State.GameOver)
+                Time.timeScale = 1f;
+        }
+    }
+
+    public bool IsGameOver
+    {
+        get { return state == State.GameOver; }
     }
 
     public bool IsRealWorld
@@ -79,13 +100,19 @@ public class GameManager : MonoBehaviour
         _GameStateSwitchCallbacks.Add(callback);
     }
 
-    public void KillPlayer()
+    private void KillPlayer()
     {
+        SoundManager.Instance.PlayFired();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void SetPlayerIsInsane()
+    public void GameOver()
     {
-        // Show game over 
+        if (!GameManager.Instance.IsGameOver)
+        {
+            state = State.GameOver;
+            Time.timeScale = 0f;
+            KillPlayer();
+        }
     }
 }

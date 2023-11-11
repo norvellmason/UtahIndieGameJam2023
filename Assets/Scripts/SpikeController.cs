@@ -9,7 +9,7 @@ public class SpikeController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameManager.Instance.KillPlayer();
+            GameManager.Instance.GameOver();
         }
     }
 }
