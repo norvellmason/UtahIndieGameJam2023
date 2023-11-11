@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RoadDetection : MonoBehaviour
+public class SpikeController : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
