@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2debce3f328d8814cb075a43102f154f
+guid: 135c81d7658f9ab4aac9b09630099c12
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,127 +149,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nega-sprite-animation-sheet-export_0
+      name: Building-1-export_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1600
-        height: 1600
+        width: 3200
+        height: 2200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d374473c7f63d048a3203887fff6732
-      internalID: 1424589469
+      spriteID: fa7b2be11b7d1804e977740c8ac2f9d9
+      internalID: 479017228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nega-sprite-animation-sheet-export_1
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 1600
-        height: 1600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2a3c5c3d9374f54cbe11c8bc005fa96
-      internalID: 351470002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nega-sprite-animation-sheet-export_2
+      name: Building-1-export_1
       rect:
         serializedVersion: 2
         x: 3200
         y: 0
-        width: 1600
-        height: 1600
+        width: 3200
+        height: 2200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55b7d5d445f136540b4c9f9cc9875093
-      internalID: -115235807
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nega-sprite-animation-sheet-export_3
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 0
-        width: 1600
-        height: 1600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86ffbae01687bb54baa6a4e74369801d
-      internalID: -221910254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nega-sprite-animation-sheet-export_4
-      rect:
-        serializedVersion: 2
-        x: 6400
-        y: 0
-        width: 1600
-        height: 1600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 414f81a6835fadc4aa03dd894cd5ec5a
-      internalID: -72438358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nega-sprite-animation-sheet-export_5
-      rect:
-        serializedVersion: 2
-        x: 8000
-        y: 0
-        width: 1600
-        height: 1600
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5759ae8ee4a5f644687ddeb4548a59f6
-      internalID: -2045932428
+      spriteID: df87eadef6ad0564caab4c1947701a3e
+      internalID: -730412642
       vertices: []
       indices: 
       edges: []
@@ -285,12 +201,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Nega-sprite-animation-sheet-export_0: 1424589469
-      Nega-sprite-animation-sheet-export_1: 351470002
-      Nega-sprite-animation-sheet-export_2: -115235807
-      Nega-sprite-animation-sheet-export_3: -221910254
-      Nega-sprite-animation-sheet-export_4: -72438358
-      Nega-sprite-animation-sheet-export_5: -2045932428
+      Building-1-export_0: 479017228
+      Building-1-export_1: -730412642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
