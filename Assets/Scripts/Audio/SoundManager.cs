@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance { get; private set; }
 
     private AudioSource _musicSource, _effectsSource;
-    private AudioClip _firedClip, _realWorldClip, _dreamWorldClip;
+    private AudioClip _realWorldClip, _dreamWorldClip, _firedClip, _realWalkClip, _dreamWalkClip;
 
 
     public static void Create()
@@ -34,37 +34,41 @@ public class SoundManager : MonoBehaviour
 
     private void LoadClips()
     {
-        if (_dreamWorldClip == null)
-        {
-            _dreamWorldClip = Resources.Load<AudioClip>("Audio/Music/Dark_Theme");
-            PreloadMusicClip(_dreamWorldClip);
-        }
+        _dreamWorldClip = Resources.Load<AudioClip>("Audio/Music/Dark_Theme");
+        _realWorldClip = Resources.Load<AudioClip>("Audio/Music/Dark_Theme");
 
-        if (_firedClip == null)
-            _firedClip = Resources.Load<AudioClip>("Audio/SFX/fired");
-    }
-
-    /// <summary>
-    /// Preload playing music so that the first time the user plays it, it doesn't cause any lag
-    /// </summary>
-    /// <param name="clip"></param>
-    private void PreloadMusicClip(AudioClip clip)
-    {
-        float prevVolume = _musicSource.volume;
-        _musicSource.volume = 0;
-        PlayMusic(clip);
-        _musicSource.Stop();
-        _musicSource.volume = prevVolume;
+        _realWalkClip = Resources.Load<AudioClip>("Audio/SFX/Walking-Light");
+        _dreamWalkClip = Resources.Load<AudioClip>("Audio/SFX/Walking-Dark");
+        _firedClip = Resources.Load<AudioClip>("Audio/SFX/fired");
     }
 
     private void PlaySound(AudioClip clip)
     {
-        _effectsSource.PlayOneShot(clip);
+        if (!_effectsSource.isPlaying)
+            _effectsSource.PlayOneShot(clip);
     }
 
     private void PlayMusic(AudioClip clip)
     {
-        _musicSource.PlayOneShot(clip);
+        if (_musicSource.clip != clip)
+        {
+            float currentMusicPosition = _musicSource.time;
+            _musicSource.Stop();
+
+            _musicSource.clip = clip;
+            _musicSource.time = currentMusicPosition;
+            _musicSource.Play();
+        }
+    }
+
+    public void PlayRealWorldMusic()
+    {
+        PlayMusic(_realWorldClip);
+    }
+
+    public void PlayFired()
+    {
+        PlaySound(_firedClip);
     }
 
     public void PlayDreamWorldMusic()
@@ -72,8 +76,20 @@ public class SoundManager : MonoBehaviour
         PlayMusic(_dreamWorldClip);
     }
 
-    public void PlayFired()
+    public void PlayWalk()
     {
-        PlaySound(_firedClip);
+        if (GameManager.Instance.IsRealWorld)
+            PlayRealWalk();
+        else
+            PlayDreamWalk();
+    }
+
+    private void PlayRealWalk()
+    {
+        PlaySound(_realWalkClip);
+    }
+    private void PlayDreamWalk()
+    {
+        PlaySound(_dreamWalkClip);
     }
 }

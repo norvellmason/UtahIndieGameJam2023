@@ -65,15 +65,17 @@ public class PlayerController : MonoBehaviour
         if (_InputController.IsPressingRight && !_InputController.IsPressingLeft)
         {
             _Rigidbody.AddForce(new Vector2(GetMoveSpeed(), 0));
-            _Animator.SetBool("isRunning", true);
             _SpriteRenderer.flipX = false;
+            _Animator.SetBool("isRunning", true);
+            PlayWalk();
         }
 
-        if(_InputController.IsPressingLeft && !_InputController.IsPressingRight)
+        if (_InputController.IsPressingLeft && !_InputController.IsPressingRight)
         {
             _Rigidbody.AddForce(new Vector2(-GetMoveSpeed(), 0));
-            _Animator.SetBool("isRunning", true);
             _SpriteRenderer.flipX = true;
+            _Animator.SetBool("isRunning", true);
+            PlayWalk();
         }
 
         _Animator.SetBool("isInAir", false);
@@ -101,6 +103,12 @@ public class PlayerController : MonoBehaviour
         }
 
         _WasGroundedLastFrame = IsGrounded();
+    }
+
+    private void PlayWalk()
+    {
+        if (IsGrounded() && !_InputController.IsPressingJump)
+            SoundManager.Instance.PlayWalk();
     }
 
     private bool IsGrounded()

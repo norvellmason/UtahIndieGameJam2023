@@ -61,6 +61,9 @@ public class GameManager : MonoBehaviour
                 case State.GameOver:
                     Time.timeScale = 0f;
                     break;
+                case State.RealWorld:
+                    SoundManager.Instance.PlayRealWorldMusic();
+                    break;
                 case State.DreamWorld:
                     SoundManager.Instance.PlayDreamWorldMusic();
                     break;
