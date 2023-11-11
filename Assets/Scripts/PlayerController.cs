@@ -13,17 +13,16 @@ public class PlayerController : MonoBehaviour
     private float RealJumpHeight = 1500;
     private float DreamJumpHeight = 600;
 
-    private bool _IsDreamMode = false;
     private float _JumpCooldown = 0f;
 
     private float GetMoveSpeed()
     {
-        return _IsDreamMode ? DreamMoveSpeed : RealMoveSpeed;
+        return GameManager.Instance.IsDreamMode ? DreamMoveSpeed : RealMoveSpeed;
     }
 
     private float GetJumpHeight()
     {
-        return _IsDreamMode ? DreamJumpHeight : RealJumpHeight;
+        return GameManager.Instance.IsDreamMode ? DreamJumpHeight : RealJumpHeight;
     }
 
     // Start is called before the first frame update
@@ -76,9 +75,9 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleDreamMode()
     {
-        _IsDreamMode = !_IsDreamMode;
-
-        if (_IsDreamMode)
+        GameManager.Instance.ToggleDreamMode(); 
+        
+        if (GameManager.Instance.IsDreamMode)
         {
             _Rigidbody.gravityScale = 0.75f;
             _Rigidbody.drag = 3;

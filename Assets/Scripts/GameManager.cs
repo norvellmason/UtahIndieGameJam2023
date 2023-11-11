@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public static float DreamModeSpeedFactor = 0.75f;
 
 
     private enum State
@@ -18,10 +19,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else if (Instance != this)
+        if (Instance != null && Instance != this)
             Destroy(gameObject);
+        else 
+            Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -35,9 +36,18 @@ public class GameManager : MonoBehaviour
         get { return state == State.RealWorld; }
     }
 
-    public bool IsUpsideDownWorld
+    public bool IsDreamMode
     {
         get { return state == State.UpsideDownWorld; }
+    }
+
+
+    public void ToggleDreamMode()
+    {
+        if (state == State.RealWorld)
+            state = State.UpsideDownWorld;
+        else
+            state = State.RealWorld;
     }
 
 
