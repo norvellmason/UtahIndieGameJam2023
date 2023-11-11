@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         else 
             Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
