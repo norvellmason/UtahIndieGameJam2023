@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public static float DreamModeSpeedFactor = 0.75f;
-
+    public delegate void GameStateSwitchCallback();
+    private List<GameStateSwitchCallback> _GameStateSwitchCallbacks = new List<GameStateSwitchCallback>();
 
     private enum State
     {
@@ -48,6 +51,16 @@ public class GameManager : MonoBehaviour
             state = State.UpsideDownWorld;
         else
             state = State.RealWorld;
+
+        foreach (GameStateSwitchCallback callback in _GameStateSwitchCallbacks)
+        {
+            callback();
+        }
+    }
+
+    public void AddGameStateSwitchCallback(GameStateSwitchCallback callback)
+    {
+        _GameStateSwitchCallbacks.Add(callback);
     }
 
 
