@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CurrentTime: -0.00152056
+    - _CurrentTime: -0.0018118734
     - _Enabled: 0
     - _Magnification: -0.2
     - _Size: 0.05
