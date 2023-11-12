@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4270222937476663600}
   - component: {fileID: 4253665945269602593}
   - component: {fileID: 4620453955664309086}
+  - component: {fileID: 7472173322772020618}
   m_Layer: 8
   m_Name: girder-vertical
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -700769111
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -498738215, guid: 26212242746906647ada4afceed88e68, type: 3}
+  m_Sprite: {fileID: -1194318142, guid: 26212242746906647ada4afceed88e68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,6 +152,20 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &7472173322772020618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028752796606003180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8d70e53567b8743966a57adebe8c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _NormalSprite: {fileID: -1194318142, guid: 26212242746906647ada4afceed88e68, type: 3}
+  _DreamSprite: {fileID: -498738215, guid: 26212242746906647ada4afceed88e68, type: 3}
 --- !u!1 &6347886801813776560
 GameObject:
   m_ObjectHideFlags: 0
