@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 362b121ab37fa8e4aa9d0823cf0232b1
+guid: 57a4315625b3f8e4bb91e75b87216b20
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cloud-export 1_0
+      name: final_building-export_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3200
-        height: 800
+        width: 1600
+        height: 3200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b931b623f2dd5542a2051670161a2e0
-      internalID: 903960968
+      spriteID: 6e7e915095815224393f5f590ce07705
+      internalID: -2051174792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cloud-export 1_1
+      name: final_building-export_1
       rect:
         serializedVersion: 2
-        x: 3200
+        x: 1600
         y: 0
-        width: 3200
-        height: 800
+        width: 1600
+        height: 3200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44bc51ec863bca94d80b7916a4f62b60
-      internalID: -1526550105
+      spriteID: cd8e965a75d59814a9b24387be009c59
+      internalID: -464156022
       vertices: []
       indices: 
       edges: []
@@ -201,8 +201,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cloud-export 1_0: 903960968
-      Cloud-export 1_1: -1526550105
+      final_building-export_0: -2051174792
+      final_building-export_1: -464156022
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
