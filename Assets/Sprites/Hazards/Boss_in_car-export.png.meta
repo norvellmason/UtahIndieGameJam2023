@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 135c81d7658f9ab4aac9b09630099c12
+guid: 78d72803e28b5474a9e26699c0cc2179
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -149,43 +149,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Building-1-export_0
+      name: Boss_in_car-export_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 3200
-        height: 2200
+        height: 1600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa7b2be11b7d1804e977740c8ac2f9d9
-      internalID: 479017228
+      spriteID: 62ca3398b1dc3714994569a29abc7880
+      internalID: -698762015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Building-1-export_1
+      name: Boss_in_car-export_1
       rect:
         serializedVersion: 2
         x: 3200
         y: 0
         width: 3200
-        height: 2200
+        height: 1600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df87eadef6ad0564caab4c1947701a3e
-      internalID: -730412642
+      spriteID: 10d7bf7d9db471f4b8ae407d46716729
+      internalID: 1601693031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_in_car-export_2
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 0
+        width: 3200
+        height: 1600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616231d34188c0a42a57be6b36a4b6df
+      internalID: 1110274499
       vertices: []
       indices: 
       edges: []
@@ -201,8 +222,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Building-1-export_0: 479017228
-      Building-1-export_1: -730412642
+      Boss_in_car-export_0: -698762015
+      Boss_in_car-export_1: 1601693031
+      Boss_in_car-export_2: 1110274499
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

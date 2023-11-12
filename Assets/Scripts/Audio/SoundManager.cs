@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource _musicSource, _effectsSource, _voiceSource, _switchSource;
     private AudioClip _realWorldClip, _dreamWorldClip, _firedClip, _realWalkClip, _dreamWalkClip, _jumpClip, _landingClip, _switchClip, _earlyClip;
+    private IEnumerator _musicCoroutine;
 
 
     public static void Create()
@@ -34,14 +36,17 @@ public class SoundManager : MonoBehaviour
         if (_musicSource == null) 
             _musicSource = gameObject.AddComponent<AudioSource>();
         if (_switchSource == null)
+        {
             _switchSource = gameObject.AddComponent<AudioSource>();
+            _switchSource.volume = 0.3f;
+        }
 
         LoadClips();
     }
 
     private void LoadClips()
     {
-        _dreamWorldClip = Resources.Load<AudioClip>("Audio/Music/Dark_Theme");
+        _dreamWorldClip = Resources.Load<AudioClip>("Audio/Music/Light_Theme_Darkened");
         _realWorldClip = Resources.Load<AudioClip>("Audio/Music/Light_Theme");
 
         _realWalkClip = Resources.Load<AudioClip>("Audio/SFX/Walking-Light");
@@ -67,16 +72,28 @@ public class SoundManager : MonoBehaviour
         if (!_effectsSource.isPlaying)
             _effectsSource.PlayOneShot(clip);
     }
+
     private void PlayMusic(AudioClip clip)
     {
-        if (_musicSource.clip != clip)
+        if (_musicSource.clip == null)
         {
-            float currentMusicPosition = _musicSource.time;
-            _musicSource.Stop();
-
             _musicSource.clip = clip;
-            _musicSource.time = currentMusicPosition;
             _musicSource.Play();
+        }
+        else if (_musicSource.clip != clip)
+        {
+            if (_musicCoroutine != null)
+                StopCoroutine(_musicCoroutine);
+
+            _musicCoroutine = AudioFade.FadeOutAndIn(_musicSource, clip, 0.01f, 1f);
+            StartCoroutine(_musicCoroutine);
+            //AudioSource audioSource = _musicSource;
+            //float currentMusicPosition = audioSource.time;
+            //audioSource.Stop();
+
+            //audioSource.clip = clip;
+            //audioSource.time = currentMusicPosition;
+            //audioSource.Play();
         }
     }
 
