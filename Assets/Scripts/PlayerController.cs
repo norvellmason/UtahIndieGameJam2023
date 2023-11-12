@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private InputController _InputController;
     private SpriteRenderer _SpriteRenderer;
     private Animator _Animator;
+    [SerializeField] private Material ShockwaveMaterial;
     [SerializeField] private GameObject JumpDustEffectPrefab;
     [SerializeField] private GameObject RunningDustEffectPrefab;
     [SerializeField] private float RealMoveSpeed = 100;
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private float _JumpCooldown = 0f;
     private float _RecentlyFellTimer = 0.1f;
     private bool _WasGroundedLastFrame = false;
+    private float _ShockwaveTimer = 0f;
 
     private float GetMoveSpeed()
     {
@@ -57,6 +60,16 @@ public class PlayerController : MonoBehaviour
         if (_RecentlyFellTimer > 0)
         {
             _RecentlyFellTimer -= Time.deltaTime;
+        }
+
+        if (_ShockwaveTimer > 0)
+        {
+            ShockwaveMaterial.SetFloat("_CurrentTime", -_ShockwaveTimer);
+            _ShockwaveTimer -= Time.deltaTime;
+            if (_ShockwaveTimer <= 0)
+            {
+                ShockwaveMaterial.SetInt("_Enabled", 0);
+            }
         }
     }
 
@@ -155,6 +168,8 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Instance.ToggleDreamMode();
         SoundManager.Instance.PlaySwitch();
+        ShockwaveMaterial.SetInt("_Enabled", 1);
+        _ShockwaveTimer = 1;
         
         if (GameManager.Instance.IsDreamWorld)
         {
