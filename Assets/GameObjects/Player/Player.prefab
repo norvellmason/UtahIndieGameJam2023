@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a46719fa59ea1a4686c5fd9ed75282b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShockwaveMaterial: {fileID: 2100000, guid: a336adf75a841534e97bfcdb287aec99, type: 2}
   JumpDustEffectPrefab: {fileID: 1485905342436069279, guid: d6db4e8932d9b0b47b901c298c934fe4, type: 3}
   RunningDustEffectPrefab: {fileID: 3712827710927634759, guid: 830177f69d429f747b379cd009b9a61d, type: 3}
   RealMoveSpeed: 100
