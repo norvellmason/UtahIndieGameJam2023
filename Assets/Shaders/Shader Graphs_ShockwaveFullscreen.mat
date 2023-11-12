@@ -37,11 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CurrentTime: -0.0008328045
+    - _CurrentTime: -0.0017693518
     - _Enabled: 0
     - _Magnification: -0.2
-    - _Size: 0.1
-    - _Speed: 1
+    - _Size: 0.05
+    - _Speed: 2
     - _Test: 0
     m_Colors:
     - _FocalPoint: {r: 0.5, g: 0.5, b: 0, a: 0}

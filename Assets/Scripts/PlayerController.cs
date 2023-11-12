@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.ToggleDreamMode();
         SoundManager.Instance.PlaySwitch();
         ShockwaveMaterial.SetInt("_Enabled", 1);
-        _ShockwaveTimer = 1;
+        _ShockwaveTimer = 0.5f;
         
         if (GameManager.Instance.IsDreamWorld)
         {
