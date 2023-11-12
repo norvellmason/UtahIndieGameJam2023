@@ -105,12 +105,14 @@ public class PlayerController : MonoBehaviour
             _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, 0);
             _Rigidbody.AddForce(new Vector2(0, GetJumpHeight()));
             _JumpCooldown = 0.5f;
+            SoundManager.Instance.PlayJump();
             Instantiate(JumpDustEffectPrefab, gameObject.transform.position - new Vector3(0, _Collider.bounds.extents.y, 0), Quaternion.identity);
         }
 
         if (!_WasGroundedLastFrame && IsGrounded())
         {
             Instantiate(JumpDustEffectPrefab, gameObject.transform.position - new Vector3(0, _Collider.bounds.extents.y, 0), Quaternion.identity);
+            SoundManager.Instance.PlayLanding();
         }
 
         _WasGroundedLastFrame = IsGrounded();
@@ -151,7 +153,8 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleDreamMode()
     {
-        GameManager.Instance.ToggleDreamMode(); 
+        GameManager.Instance.ToggleDreamMode();
+        SoundManager.Instance.PlaySwitch();
         
         if (GameManager.Instance.IsDreamWorld)
         {

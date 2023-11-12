@@ -140,6 +140,7 @@ public class GameManager : MonoBehaviour
     public void GameWon()
     {
         State = GameManagerState.GameOver;
+        SoundManager.Instance.PlayEarly();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
