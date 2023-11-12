@@ -13,7 +13,7 @@ public class LevelEndDetection : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameManager.Instance.GameWon();
         }
     }
 }
