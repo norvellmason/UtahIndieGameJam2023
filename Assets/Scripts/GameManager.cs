@@ -75,11 +75,8 @@ public class GameManager : MonoBehaviour
                     Time.timeScale = 0f;
                     SoundManager.Instance.StopMusic();
                     break;
-                case GameManagerState.RealWorld:
-                    SoundManager.Instance.PlayRealWorldMusic();
-                    break;
-                case GameManagerState.DreamWorld:
-                    SoundManager.Instance.PlayDreamWorldMusic();
+                default:
+                    SoundManager.Instance.PlayMusic();
                     break;
             }
             if (value != GameManagerState.GameOver)

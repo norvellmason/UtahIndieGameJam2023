@@ -21,5 +21,8 @@ public class InputController : MonoBehaviour
             GameManager.DebugInvincible = true;
         else if (Input.GetKeyDown(KeyCode.V))
             GameManager.DebugInvincible = false;
+
+        if (Input.GetKeyDown(KeyCode.M))
+            SoundManager.Instance.ToggleSound();
     }
 }

@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     private AudioSource _musicSource, _effectsSource, _voiceSource, _switchSource;
     private AudioClip _realWorldClip, _dreamWorldClip, _firedClip, _realWalkClip, _dreamWalkClip, _jumpClip, _landingClip, _switchClip, _earlyClip;
     private IEnumerator _musicCoroutine;
+    private bool _playSound = true;
 
 
     public static void Create()
@@ -58,42 +59,48 @@ public class SoundManager : MonoBehaviour
         _earlyClip = Resources.Load<AudioClip>("Audio/SFX/Early");
     }
 
+    public void ToggleSound()
+    {
+        _playSound = !_playSound;
+        _musicSource.mute = !_playSound;
+        if (!_playSound) {
+            StopEffect();
+        }
+    }
+
     private void PlayVoice(AudioClip clip)
     {
-        _voiceSource.PlayOneShot(clip);
+        if (_playSound)
+            _voiceSource.PlayOneShot(clip);
     }
     private void PlaySwitch(AudioClip clip)
     {
-        if (!_switchSource.isPlaying)
+        if (_playSound && !_switchSource.isPlaying)
             _switchSource.PlayOneShot(clip);
     }
     private void PlaySound(AudioClip clip)
     {
-        if (!_effectsSource.isPlaying)
+        if (_playSound && !_effectsSource.isPlaying)
             _effectsSource.PlayOneShot(clip);
     }
 
-    private void PlayMusic(AudioClip clip)
+    private void PlayMusicInternal(AudioClip clip)
     {
-        if (_musicSource.clip == null)
+        if (_playSound)
         {
-            _musicSource.clip = clip;
-            _musicSource.Play();
-        }
-        else if (_musicSource.clip != clip)
-        {
-            if (_musicCoroutine != null)
-                StopCoroutine(_musicCoroutine);
+            if (_musicSource.clip == null)
+            {
+                _musicSource.clip = clip;
+                _musicSource.Play();
+            }
+            else if (_musicSource.clip != clip)
+            {
+                if (_musicCoroutine != null)
+                    StopCoroutine(_musicCoroutine);
 
-            _musicCoroutine = AudioFade.FadeOutAndIn(_musicSource, clip, 0.01f, 1f);
-            StartCoroutine(_musicCoroutine);
-            //AudioSource audioSource = _musicSource;
-            //float currentMusicPosition = audioSource.time;
-            //audioSource.Stop();
-
-            //audioSource.clip = clip;
-            //audioSource.time = currentMusicPosition;
-            //audioSource.Play();
+                _musicCoroutine = AudioFade.FadeOutAndIn(_musicSource, clip, 0.01f, 1f);
+                StartCoroutine(_musicCoroutine);
+            }
         }
     }
 
@@ -107,14 +114,12 @@ public class SoundManager : MonoBehaviour
         _effectsSource.Stop();
     }
 
-    public void PlayRealWorldMusic()
+    public void PlayMusic()
     {
-        PlayMusic(_realWorldClip);
-    }
-
-    public void PlayDreamWorldMusic()
-    {
-        PlayMusic(_dreamWorldClip);
+        if (GameManager.Instance.IsRealWorld)
+            PlayMusicInternal(_realWorldClip);
+        else if (GameManager.Instance.IsDreamWorld)
+            PlayMusicInternal(_dreamWorldClip);
     }
 
     public void PlayWalk()
