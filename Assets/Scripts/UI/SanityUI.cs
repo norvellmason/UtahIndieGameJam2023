@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class SanityUI : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI textMesh;
+    [SerializeField] private TextMeshProUGUI textMesh;
 
     private void Start()
     {

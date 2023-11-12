@@ -9,7 +9,7 @@ public class LevelEndDetection : MonoBehaviour
     {
         if (collision.gameObject.tag == "Boss")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameManager.Instance.GameOver();
         }
         else if (collision.gameObject.tag == "Player")
         {
