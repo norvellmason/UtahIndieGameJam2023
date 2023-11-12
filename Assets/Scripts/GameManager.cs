@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public static float DreamModeSpeedFactor = 0.75f;
+    public static bool DEBUG_INVINCIBLE = false;
+
     public delegate void GameStateSwitchCallback();
     private List<GameStateSwitchCallback> _GameStateSwitchCallbacks = new List<GameStateSwitchCallback>();
     public event EventHandler<SanityEventArgs> OnSanityChanged;
@@ -120,7 +122,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        if (!GameManager.Instance.IsGameOver)
+        if (!GameManager.Instance.IsGameOver && !GameManager.DEBUG_INVINCIBLE)
         {
             state = State.GameOver;
             Time.timeScale = 0f;
