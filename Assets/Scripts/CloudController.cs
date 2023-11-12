@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CloudController : MonoBehaviour
 {
+    [SerializeField] private Sprite _NormalSprite;
+    [SerializeField] private Sprite _DreamSprite;
     BoxCollider2D _Collider;
     SpriteRenderer _Renderer;
 
@@ -26,12 +28,12 @@ public class CloudController : MonoBehaviour
         if (GameManager.Instance.IsDreamWorld)
         {
             _Collider.enabled = true;
-            _Renderer.color = Color.green;
+            _Renderer.sprite = _DreamSprite;
         }
         else
         {
             _Collider.enabled = false;
-            _Renderer.color = Color.white * 0.5f;
+            _Renderer.sprite = _NormalSprite;
         }
     }
 }

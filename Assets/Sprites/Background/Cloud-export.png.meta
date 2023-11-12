@@ -152,9 +152,9 @@ TextureImporter:
       name: Cloud-export_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 45
         y: 0
-        width: 800
+        width: 3110
         height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,9 +173,9 @@ TextureImporter:
       name: Cloud-export_1
       rect:
         serializedVersion: 2
-        x: 800
+        x: 3245
         y: 0
-        width: 800
+        width: 3110
         height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -186,132 +186,6 @@ TextureImporter:
       bones: []
       spriteID: bdd85501755b14d4da35da47e585f088
       internalID: 1304100383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export_2
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ad27a19a3c895a48a74cccf4e42e34a
-      internalID: -2094819157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export_3
-      rect:
-        serializedVersion: 2
-        x: 2400
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f68c8775fd660524997fac399930ce80
-      internalID: -2033107640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export_4
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19286de5eece8d541a0e2acfac41baaa
-      internalID: 1370249204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export_5
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49842554d053fb14ea5ff0e8a3744ebb
-      internalID: 535142309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export_6
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e6dda5233b8d704da64765ef86cb50e
-      internalID: -2125795718
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export_7
-      rect:
-        serializedVersion: 2
-        x: 5600
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cd05b1293792de4a901121134869f7c
-      internalID: -1882851472
       vertices: []
       indices: 
       edges: []
@@ -329,12 +203,6 @@ TextureImporter:
     nameFileIdTable:
       Cloud-export_0: -915030924
       Cloud-export_1: 1304100383
-      Cloud-export_2: -2094819157
-      Cloud-export_3: -2033107640
-      Cloud-export_4: 1370249204
-      Cloud-export_5: 535142309
-      Cloud-export_6: -2125795718
-      Cloud-export_7: -1882851472
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
