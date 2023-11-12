@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private InputController _InputController;
     private SpriteRenderer _SpriteRenderer;
     private Animator _Animator;
+    [SerializeField] private GameObject JumpDustEffectPrefab;
+    [SerializeField] private GameObject RunningDustEffectPrefab;
     [SerializeField] private float RealMoveSpeed = 100;
     [SerializeField] private float DreamMoveSpeed = 13;
     [SerializeField] private float RealJumpHeight = 1500;
@@ -66,7 +69,11 @@ public class PlayerController : MonoBehaviour
             _Rigidbody.AddForce(new Vector2(GetMoveSpeed(), 0));
             _SpriteRenderer.flipX = false;
             _Animator.SetBool("isRunning", true);
-            PlayWalk();
+            if (IsGrounded())
+            {
+                Instantiate(RunningDustEffectPrefab, gameObject.transform.position - new Vector3(0, _Collider.bounds.extents.y, 0), Quaternion.identity);
+                PlayWalk();
+            }
         }
 
         if (_InputController.IsPressingLeft && !_InputController.IsPressingRight)
@@ -74,7 +81,12 @@ public class PlayerController : MonoBehaviour
             _Rigidbody.AddForce(new Vector2(-GetMoveSpeed(), 0));
             _SpriteRenderer.flipX = true;
             _Animator.SetBool("isRunning", true);
-            PlayWalk();
+            if (IsGrounded())
+            {
+                GameObject dustEffect = Instantiate(RunningDustEffectPrefab, gameObject.transform.position - new Vector3(0, _Collider.bounds.extents.y, 0), Quaternion.identity);
+                dustEffect.transform.localScale = new Vector3(-dustEffect.transform.localScale.x, dustEffect.transform.localScale.y, dustEffect.transform.localScale.z);
+                PlayWalk();
+            }
         }
 
         _Animator.SetBool("isInAir", false);
@@ -93,6 +105,12 @@ public class PlayerController : MonoBehaviour
             _Rigidbody.velocity = new Vector2(_Rigidbody.velocity.x, 0);
             _Rigidbody.AddForce(new Vector2(0, GetJumpHeight()));
             _JumpCooldown = 0.5f;
+            Instantiate(JumpDustEffectPrefab, gameObject.transform.position - new Vector3(0, _Collider.bounds.extents.y, 0), Quaternion.identity);
+        }
+
+        if (!_WasGroundedLastFrame && IsGrounded())
+        {
+            Instantiate(JumpDustEffectPrefab, gameObject.transform.position - new Vector3(0, _Collider.bounds.extents.y, 0), Quaternion.identity);
         }
 
         _WasGroundedLastFrame = IsGrounded();

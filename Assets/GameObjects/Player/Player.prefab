@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a46719fa59ea1a4686c5fd9ed75282b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JumpDustEffectPrefab: {fileID: 1485905342436069279, guid: d6db4e8932d9b0b47b901c298c934fe4, type: 3}
+  RunningDustEffectPrefab: {fileID: 3712827710927634759, guid: 830177f69d429f747b379cd009b9a61d, type: 3}
   RealMoveSpeed: 100
   DreamMoveSpeed: 13
   RealJumpHeight: 1500
@@ -163,7 +165,7 @@ GameObject:
   - component: {fileID: 5036107663422578289}
   - component: {fileID: 4868124855596817565}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
