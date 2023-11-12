@@ -7,7 +7,6 @@ public class BossLogic : MonoBehaviour
 {
     [SerializeField] private float Speed = 10;
 
-   // Update is called once per frame
     private void Update()
     {
         float speed = Speed;
