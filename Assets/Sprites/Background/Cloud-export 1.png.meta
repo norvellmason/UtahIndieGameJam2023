@@ -154,7 +154,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
+        width: 3200
         height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,9 +173,9 @@ TextureImporter:
       name: Cloud-export 1_1
       rect:
         serializedVersion: 2
-        x: 800
+        x: 3200
         y: 0
-        width: 800
+        width: 3200
         height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -186,132 +186,6 @@ TextureImporter:
       bones: []
       spriteID: 44bc51ec863bca94d80b7916a4f62b60
       internalID: -1526550105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export 1_2
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea98c3b9fb506b147aa5a3b478484db6
-      internalID: -1811599539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export 1_3
-      rect:
-        serializedVersion: 2
-        x: 2400
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e10c5ac4ec3b8549aabf77e1452aa07
-      internalID: 2098236823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export 1_4
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ffa184ac92436e429320f8ae613feaf
-      internalID: -839768227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export 1_5
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb0f6f76531ebec4594c237c9de3efd5
-      internalID: -1952475287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export 1_6
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48a48fa65a0abe64683f58e8f4bfb740
-      internalID: 1006469584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cloud-export 1_7
-      rect:
-        serializedVersion: 2
-        x: 5600
-        y: 0
-        width: 800
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c72de7da4bbc8b74bba87523e4dcf2d1
-      internalID: 564460553
       vertices: []
       indices: 
       edges: []
@@ -329,12 +203,6 @@ TextureImporter:
     nameFileIdTable:
       Cloud-export 1_0: 903960968
       Cloud-export 1_1: -1526550105
-      Cloud-export 1_2: -1811599539
-      Cloud-export 1_3: 2098236823
-      Cloud-export 1_4: -839768227
-      Cloud-export 1_5: -1952475287
-      Cloud-export 1_6: 1006469584
-      Cloud-export 1_7: 564460553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
