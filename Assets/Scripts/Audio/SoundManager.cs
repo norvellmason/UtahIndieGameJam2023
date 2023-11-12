@@ -64,6 +64,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void StopMusic()
+    {
+        _musicSource.Stop();
+        _musicSource.clip = null;
+    }
+
     public void PlayRealWorldMusic()
     {
         PlayMusic(_realWorldClip);

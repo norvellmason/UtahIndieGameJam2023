@@ -19,20 +19,21 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public static float DreamModeSpeedFactor = 0.75f;
-    public static bool DEBUG_INVINCIBLE = false;
+    public static bool ALLOW_CHEATS = true;
+    public static bool _debugInvincible = false;
 
     public delegate void GameStateSwitchCallback();
     private List<GameStateSwitchCallback> _GameStateSwitchCallbacks = new List<GameStateSwitchCallback>();
     public event EventHandler<SanityEventArgs> OnSanityChanged;
 
-    private enum State
+    private enum GameManagerState
     {
         RealWorld,
         DreamWorld,
         GameOver
     }
 
-    private State _state;
+    private GameManagerState _state;
 
 
     private void Awake()
@@ -49,10 +50,20 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        state = State.RealWorld;
+        State = GameManagerState.RealWorld;
     }
 
-    private State state
+    public static bool DebugInvincible
+    {
+        get { return _debugInvincible; }
+        set 
+        { 
+            if (ALLOW_CHEATS)
+                _debugInvincible = value;
+        }
+    }
+
+    private GameManagerState State
     {
         get { return _state; }
         set 
@@ -60,34 +71,35 @@ public class GameManager : MonoBehaviour
             _state = value;
             switch (value)
             {
-                case State.GameOver:
+                case GameManagerState.GameOver:
                     Time.timeScale = 0f;
+                    SoundManager.Instance.StopMusic();
                     break;
-                case State.RealWorld:
+                case GameManagerState.RealWorld:
                     SoundManager.Instance.PlayRealWorldMusic();
                     break;
-                case State.DreamWorld:
+                case GameManagerState.DreamWorld:
                     SoundManager.Instance.PlayDreamWorldMusic();
                     break;
             }
-            if (value != State.GameOver)
+            if (value != GameManagerState.GameOver)
                 Time.timeScale = 1f;
         }
     }
 
     public bool IsGameOver
     {
-        get { return state == State.GameOver; }
+        get { return State == GameManagerState.GameOver; }
     }
 
     public bool IsRealWorld
     {
-        get { return state == State.RealWorld; }
+        get { return State == GameManagerState.RealWorld; }
     }
 
     public bool IsDreamWorld
     {
-        get { return state == State.DreamWorld; }
+        get { return State == GameManagerState.DreamWorld; }
     }
 
     public void SetSanity(float currentSanity)
@@ -98,10 +110,10 @@ public class GameManager : MonoBehaviour
 
     public void ToggleDreamMode()
     {
-        if (state == State.RealWorld)
-            state = State.DreamWorld;
+        if (State == GameManagerState.RealWorld)
+            State = GameManagerState.DreamWorld;
         else
-            state = State.RealWorld;
+            State = GameManagerState.RealWorld;
 
         foreach (GameStateSwitchCallback callback in _GameStateSwitchCallbacks)
         {
@@ -114,19 +126,20 @@ public class GameManager : MonoBehaviour
         _GameStateSwitchCallbacks.Add(callback);
     }
 
-    private void KillPlayer()
-    {
-        SoundManager.Instance.PlayFired();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void GameOver()
     {
-        if (!GameManager.Instance.IsGameOver && !GameManager.DEBUG_INVINCIBLE)
+        if (!GameManager.Instance.IsGameOver && !GameManager.DebugInvincible)
         {
-            state = State.GameOver;
+            State = GameManagerState.GameOver;
             Time.timeScale = 0f;
-            KillPlayer();
+            SoundManager.Instance.PlayFired();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+
+    public void GameWon()
+    {
+        State = GameManagerState.GameOver;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

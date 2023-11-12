@@ -9,12 +9,6 @@ public class InputController : MonoBehaviour
     public bool IsPressingLeft { get; private set; }
     public bool IsPressingDown { get; private set; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -22,5 +16,10 @@ public class InputController : MonoBehaviour
         IsPressingRight = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
         IsPressingLeft = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
         IsPressingDown = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
+
+        if (Input.GetKeyDown(KeyCode.C))
+            GameManager.DebugInvincible = true;
+        else if (Input.GetKeyDown(KeyCode.V))
+            GameManager.DebugInvincible = false;
     }
 }

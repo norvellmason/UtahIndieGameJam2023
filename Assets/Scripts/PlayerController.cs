@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
             return false;
         }
 
-        if (!GameManager.DEBUG_INVINCIBLE)
+        if (!GameManager.DebugInvincible)
         {
             if (!IsGrounded() && _RecentlyFellTimer <= 0)
             {
