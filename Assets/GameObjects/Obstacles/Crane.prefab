@@ -44,6 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7562529200231665829}
   - component: {fileID: 2366038477630066266}
+  - component: {fileID: 5150231043872599630}
   m_Layer: 8
   m_Name: Craine-export_0
   m_TagString: Untagged
@@ -118,6 +119,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5150231043872599630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401963071372384114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8d70e53567b8743966a57adebe8c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _NormalSprite: {fileID: 1119682538, guid: 55ecb53682c50624d9582361ced6bf6e, type: 3}
+  _DreamSprite: {fileID: 1060494402, guid: 55ecb53682c50624d9582361ced6bf6e, type: 3}
 --- !u!1 &6223681052343268885
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +229,7 @@ GameObject:
   - component: {fileID: 6570266820796521887}
   - component: {fileID: 4421543235294885526}
   - component: {fileID: 8435065406332091343}
+  - component: {fileID: 7313102076018467922}
   m_Layer: 8
   m_Name: Platforms-export_0
   m_TagString: Untagged
@@ -352,3 +368,17 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &7313102076018467922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6633029357072966866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8d70e53567b8743966a57adebe8c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _NormalSprite: {fileID: 312549612, guid: c54b7da67f524554f84ac653fed82ae5, type: 3}
+  _DreamSprite: {fileID: 680049491, guid: c54b7da67f524554f84ac653fed82ae5, type: 3}
