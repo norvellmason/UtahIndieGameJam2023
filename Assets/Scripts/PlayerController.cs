@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
         if (_ShockwaveTimer > 0)
         {
             ShockwaveMaterial.SetFloat("_CurrentTime", -_ShockwaveTimer);
+            
             _ShockwaveTimer -= Time.deltaTime;
             if (_ShockwaveTimer <= 0)
             {
