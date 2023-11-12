@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4270222937476663600}
   - component: {fileID: 4253665945269602593}
   - component: {fileID: 4620453955664309086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: girder-vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3547585403557613456}
   - component: {fileID: 8404614265571328937}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

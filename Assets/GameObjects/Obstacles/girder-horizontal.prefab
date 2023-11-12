@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5785202413462073484}
   - component: {fileID: 1447424095531009457}
   - component: {fileID: 6084398608731491742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: girder-horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303258850054510456}
   - component: {fileID: 7853881773055929574}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3397214753441029584}
   - component: {fileID: 5113179491661016702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
