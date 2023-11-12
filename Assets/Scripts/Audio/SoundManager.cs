@@ -87,6 +87,13 @@ public class SoundManager : MonoBehaviour
 
             _musicCoroutine = AudioFade.FadeOutAndIn(_musicSource, clip, 0.01f, 1f);
             StartCoroutine(_musicCoroutine);
+            //AudioSource audioSource = _musicSource;
+            //float currentMusicPosition = audioSource.time;
+            //audioSource.Stop();
+
+            //audioSource.clip = clip;
+            //audioSource.time = currentMusicPosition;
+            //audioSource.Play();
         }
     }
 
