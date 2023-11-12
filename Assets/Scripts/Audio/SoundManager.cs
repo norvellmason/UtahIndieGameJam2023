@@ -44,8 +44,8 @@ public class SoundManager : MonoBehaviour
 
     private void LoadClips()
     {
-        _dreamWorldClip = Resources.Load<AudioClip>("Audio/Music/Dark_Theme_short");
-        _realWorldClip = Resources.Load<AudioClip>("Audio/Music/Light_Theme_short");
+        _dreamWorldClip = Resources.Load<AudioClip>("Audio/Music/Dark_Theme");
+        _realWorldClip = Resources.Load<AudioClip>("Audio/Music/Light_Theme_Darkened");
 
         _realWalkClip = Resources.Load<AudioClip>("Audio/SFX/Walking-Light");
         _dreamWalkClip = Resources.Load<AudioClip>("Audio/SFX/Walking-Dark");
@@ -74,7 +74,7 @@ public class SoundManager : MonoBehaviour
     {
         if (_musicSource.clip != clip)
         {
-            //StartCoroutine(AudioFadeOut.FadeOut(_musicSource, 2f));
+            //StartCoroutine(AudioFade.FadeOutAndIn(_musicSource, clip, 2f, 1f));
             float currentMusicPosition = _musicSource.time;
             _musicSource.Stop();
 
