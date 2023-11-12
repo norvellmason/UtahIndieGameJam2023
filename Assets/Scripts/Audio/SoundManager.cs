@@ -34,15 +34,18 @@ public class SoundManager : MonoBehaviour
         if (_musicSource == null) 
             _musicSource = gameObject.AddComponent<AudioSource>();
         if (_switchSource == null)
+        {
             _switchSource = gameObject.AddComponent<AudioSource>();
+            _switchSource.volume = 0.3f;
+        }
 
         LoadClips();
     }
 
     private void LoadClips()
     {
-        _dreamWorldClip = Resources.Load<AudioClip>("Audio/Music/Dark_Theme");
-        _realWorldClip = Resources.Load<AudioClip>("Audio/Music/Light_Theme");
+        _dreamWorldClip = Resources.Load<AudioClip>("Audio/Music/Dark_Theme_short");
+        _realWorldClip = Resources.Load<AudioClip>("Audio/Music/Light_Theme_short");
 
         _realWalkClip = Resources.Load<AudioClip>("Audio/SFX/Walking-Light");
         _dreamWalkClip = Resources.Load<AudioClip>("Audio/SFX/Walking-Dark");
@@ -71,6 +74,7 @@ public class SoundManager : MonoBehaviour
     {
         if (_musicSource.clip != clip)
         {
+            //StartCoroutine(AudioFadeOut.FadeOut(_musicSource, 2f));
             float currentMusicPosition = _musicSource.time;
             _musicSource.Stop();
 
