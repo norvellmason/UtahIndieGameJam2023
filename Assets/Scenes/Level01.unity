@@ -5279,11 +5279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4150282827221196943, guid: ac16db091af5f414b897633f8a1264c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 258.65
+      value: 261.9
       objectReference: {fileID: 0}
     - target: {fileID: 4150282827221196943, guid: ac16db091af5f414b897633f8a1264c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4926398532339068061, guid: ac16db091af5f414b897633f8a1264c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5327,11 +5327,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5165158405417327653, guid: ac16db091af5f414b897633f8a1264c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 258.6666
+      value: 261.9166
       objectReference: {fileID: 0}
     - target: {fileID: 5165158405417327653, guid: ac16db091af5f414b897633f8a1264c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.83
+      value: 20.04
       objectReference: {fileID: 0}
     - target: {fileID: 7765566171766243640, guid: ac16db091af5f414b897633f8a1264c1, type: 3}
       propertyPath: m_IsTrigger
@@ -5527,11 +5527,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6061835130794263299, guid: 28c738101e34e2c42ae03f05920c97f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 149.99
+      value: 149.98
       objectReference: {fileID: 0}
     - target: {fileID: 6061835130794263299, guid: 28c738101e34e2c42ae03f05920c97f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.53
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 6061835130794263299, guid: 28c738101e34e2c42ae03f05920c97f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6470,6 +6470,10 @@ PrefabInstance:
     - target: {fileID: 1132206951791446311, guid: 1b6693c76b4c263499d6d1681ce10a5a, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463177286645522402, guid: 1b6693c76b4c263499d6d1681ce10a5a, type: 3}
+      propertyPath: Speed
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3664940521972671477, guid: 1b6693c76b4c263499d6d1681ce10a5a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8428,7 +8432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4178301968961173600, guid: c34ddfb25c903c340a5111ee1f1a2b22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.98
+      value: 4.81
       objectReference: {fileID: 0}
     - target: {fileID: 4178301968961173600, guid: c34ddfb25c903c340a5111ee1f1a2b22, type: 3}
       propertyPath: m_LocalPosition.z

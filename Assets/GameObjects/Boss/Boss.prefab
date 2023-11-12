@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3664940521972671477}
   - component: {fileID: 908746844227802033}
-  - component: {fileID: 3463177286645522402}
   - component: {fileID: 5482803216930559165}
+  - component: {fileID: 3463177286645522402}
   m_Layer: 6
   m_Name: Boss
   m_TagString: Boss
@@ -62,19 +62,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3463177286645522402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132206951791446311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621b9d031f431694eaaa21aa6018c0de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 5
 --- !u!60 &5482803216930559165
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -126,6 +113,19 @@ PolygonCollider2D:
       - {x: 8.698946, y: -4.1266956}
       - {x: 8.086322, y: -1.088098}
   m_UseDelaunayMesh: 0
+--- !u!114 &3463177286645522402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132206951791446311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621b9d031f431694eaaa21aa6018c0de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
 --- !u!1 &7487311759772897006
 GameObject:
   m_ObjectHideFlags: 0
